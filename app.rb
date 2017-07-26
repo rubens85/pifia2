@@ -19,5 +19,10 @@ post '/go' do
 	session['intentos'] -= 1
 	session['parcial'] = "#{params['num']}: 1P #{session['intentos']} intentos restantes"
 	
-	erb(:index)
+	if(session['intentos'] == 0)
+		erb(:'pages/lose')
+	else
+		erb(:index)
+	end
+	
 end
