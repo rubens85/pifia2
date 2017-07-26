@@ -14,6 +14,12 @@ When(/^jugador ingrese el numero "([^"]*)" en "([^"]*)"$/) do |numero, field|
   fill_in(field, :with => numero)
 end
 
+When(/^exista numero oculto "([^"]*)"$/) do |num|
+  visit 'numOc'
+  visit '/' 
+end
+
+
 
 
 
