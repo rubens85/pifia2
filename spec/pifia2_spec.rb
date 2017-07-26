@@ -12,9 +12,4 @@ describe Pifia2 do
         expect(pifia2.validarFijas 1237, 1537).to eq 3
     end
 
-    it "generarNumero...." do
-        pifia2 = Pifia2.new
-        expect(pifia2.generarNumero 1).to eq 10000..99999
-    end
-
 end
