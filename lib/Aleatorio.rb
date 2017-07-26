@@ -1,14 +1,46 @@
 class Aleatorio
 
-   def initialize
-      @semilla = Time.now
+   #Metodo que permite generar el numero aleatori
+   def generarNumero nivel
+      return rand(generarSemilla.to_i)
    end
 
-   def generarNumero nivel
-      return rand(@semilla.to_i)
+   #Metodo que permite generar la semilla
+   def generarSemilla
+   	  #Asigna el tiempo
+      hora = Time.now.hour
+      minuto = Time.now.min
+      segundo = Time.now.sec
+      #Valida el tama.o de la cadena 
+      if hora.to_s.length == 1
+         hora = hora + 10
+      end
+      if minuto.to_s.length == 1
+         minuto = minuto + 10
+      end
+      if segundo.to_s.length == 1
+         segundo = segundo + 10
+      end
+      #Retorna la cadena concatenada
+      return "#{hora}#{minuto}#{segundo}"
    end
+    
+   #Validar las picas
+   def validarPica numeroOculto, numeroUsuario
+   	numero1=numeroOculto.to_s
+   	numero2=numeroUsuario.to_s
+   	numeroPicas=0
+   	 #Recorre la cadena 2
+   	 for i in 0..numero1.length
+   	 	#Recorre la cadena 1
+   	    for j in 0..numero2.length
+           if numero1[i] == numero2[j]
+              numeroPicas=numeroPicas+1
+           end
+   	    end
+     return numeroPicas
+   	 end
+    end
+
 
 end
-
-aleatorio = Aleatorio.new
-puts aleatorio.generarNumero 1
