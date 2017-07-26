@@ -16,7 +16,7 @@ When(/^jugador ingrese el numero "([^"]*)" en "([^"]*)"$/) do |numero, field|
 end
 
 When(/^exista numero oculto "([^"]*)"$/) do |num|
-  visit 'numOc'
+  visit '/numOc'
   visit '/' 
 end
 
