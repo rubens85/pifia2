@@ -1,8 +1,9 @@
+
 class Pifia2
 
    #Metodo que permite generar el numero aleatori
-   def generarNumero nivel
-      return rand(10000..99999)
+   def generarNumero nivel ,generador=Random.new
+      return generador.rand(10000..99999)
    end
 
    #Validar las picas

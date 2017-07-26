@@ -3,20 +3,22 @@ require './config'
 require './lib/Pifia2'
 
 get '/' do
-	session['pifia2'] = Pifia2.new
 	session['intentos']=10
+
+
+	session['pifia2'] = Pifia2.new
+	
 	session['parcial']="#{session['intentos']} intentos restantes"
-	session['numOculto']= session['pifia2'].generarNumero 1
+	session['numOculto']= "65748"
 	erb(:index)
 end
 
 get '/numOc' do
-	
 	erb(:'pages/numAleatorio')
 end
 
 post '/go' do
-	num = params['num'];
+	num = params['num']
 	session['intentos'] -= 1
 	
 	picas = session['pifia2'].validarPica session['numOculto'], num
