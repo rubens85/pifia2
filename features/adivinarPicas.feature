@@ -11,4 +11,4 @@ Scenario: si un jugador ingresa el numero 1234
 	Given que empezo el juego
 	When exista numero oculto "4289"
 	And jugador ingrese el numero "1234" en "num"
-	Then debo ver "1234: 1P 9 intentos restantes"
+	Then debo ver "1234: 1P y 2F 9 intentos restantes"

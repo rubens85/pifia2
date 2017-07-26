@@ -22,8 +22,9 @@ post '/go' do
 	session['intentos'] -= 1
 	
 	picas = session['pifia2'].validarPica session['numOculto'], num
+	fijas = session['pifia2'].validarFijas session['numOculto'], num
 	
-	session['parcial'] = "#{num}: #{picas}P #{session['intentos']} intentos restantes"
+	session['parcial'] = "#{num}: #{picas}P y #{fijas}F #{session['intentos']} intentos restantes"
 	
 	if(session['intentos'] == 0)
 		erb(:'pages/lose')
@@ -31,4 +32,7 @@ post '/go' do
 		erb(:index)
 	end
 	
+post '/vovler'
+erb(:index)
+end
 end
