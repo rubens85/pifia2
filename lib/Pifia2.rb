@@ -2,29 +2,9 @@ class Pifia2
 
    #Metodo que permite generar el numero aleatori
    def generarNumero nivel
-      return rand(generarSemilla.to_i)
+      return rand(10000..99999)
    end
 
-   #Metodo que permite generar la semilla
-   def generarSemilla
-   	  #Asigna el tiempo
-      hora = Time.now.hour
-      minuto = Time.now.min
-      segundo = Time.now.sec
-      #Valida el tama.o de la cadena 
-      if hora.to_s.length == 1
-         hora = hora + 10
-      end
-      if minuto.to_s.length == 1
-         minuto = minuto + 10
-      end
-      if segundo.to_s.length == 1
-         segundo = segundo + 10
-      end
-      #Retorna la cadena concatenada
-      return "#{hora}#{minuto}#{segundo}"
-   end
-    
    #Validar las picas
    def validarPica numeroOculto, numeroUsuario
    	numero1=numeroOculto.to_s
@@ -34,14 +14,14 @@ class Pifia2
    	 for i in 0..numero1.length
    	 	#Recorre la cadena 1
    	    for j in 0..numero2.length
-           if numero1[i] == numero2[j]
+           if numero1[i]==numero2[j]
            	if i!=j
            		numeroPicas=numeroPicas+1
            	end 
            end
    	    end
-     return numeroPicas
    	 end
+   	 return numeroPicas
     end
 
    #Validar las fijas
@@ -50,12 +30,12 @@ class Pifia2
    	numero2=numeroUsuario.to_s
    	numeroFijas=0
    	 #Recorre la cadena 2 y 1
-   	 for i in 0..numero1.length
+   	 for i in 1..numero1.length
    	 	#Compara las cadenas
         if numero1[i] == numero2[i]
-           numeroFijas=numeroFijas+1
+             numeroFijas=numeroFijas+1
         end
-     return numeroFijas
    	 end
+   	 return numeroFijas
     end
 end
