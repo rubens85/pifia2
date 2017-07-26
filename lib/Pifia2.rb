@@ -50,7 +50,7 @@ class Pifia2
    	 #Recorre la cadena 2 y 1
    	 for i in 0..numero1.length
    	 	#Compara las cadenas
-        if numero1[i] == numero2[1]
+        if numero1[i] == numero2[i]
            numeroFijas=numeroFijas+1
         end
      return numeroFijas
