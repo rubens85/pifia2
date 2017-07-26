@@ -32,7 +32,8 @@ post '/go' do
 		erb(:index)
 	end
 	
-post '/vovler'
-erb(:index)
 end
-end
+
+	post '/volver' do
+	erb(:index)
+	end
