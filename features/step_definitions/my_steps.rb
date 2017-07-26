@@ -12,6 +12,7 @@ end
 
 When(/^jugador ingrese el numero "([^"]*)" en "([^"]*)"$/) do |numero, field|
   fill_in(field, :with => numero)
+  click_button("Go")
 end
 
 When(/^exista numero oculto "([^"]*)"$/) do |num|

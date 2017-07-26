@@ -9,6 +9,3 @@ class Aleatorio
    end
 
 end
-
-aleatorio = Aleatorio.new
-puts aleatorio.generarNumero 1
