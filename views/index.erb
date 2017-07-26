@@ -6,9 +6,12 @@
 <body>
 
 	Ingresar numero
-<form>
+<form method="post" action="/go">
 	<input type="text" name="num">
-	1234: 1P 9 intentos restantes
+	<input type="submit" value="Go">
+	<%=session['parcial']%>
 </form>
+
+
 </body>
 </html>

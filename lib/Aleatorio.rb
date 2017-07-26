@@ -44,3 +44,6 @@ class Aleatorio
 
 
 end
+
+aleatorio = Aleatorio.new
+puts aleatorio.generarNumero 1
