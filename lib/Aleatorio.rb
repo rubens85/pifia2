@@ -42,8 +42,19 @@ class Aleatorio
    	 end
     end
 
+   #Validar las fijas
+   def validarFijas numeroOculto, numeroUsuario
+   	numero1=numeroOculto.to_s
+   	numero2=numeroUsuario.to_s
+   	numeroFijas=0
+   	 #Recorre la cadena 2 y 1
+   	 for i in 0..numero1.length
+   	 	#Compara las cadenas
+        if numero1[i] == numero2[1]
+           numeroFijas=numeroFijas+1
+        end
+     return numeroFijas
+   	 end
+    end
 
 end
-
-aleatorio = Aleatorio.new
-puts aleatorio.generarNumero 1
