@@ -59,6 +59,3 @@ class Pifia2
    	 end
     end
 end
-
-pifia2 = Pifia2.new
-pust pifia2.validarFijas 1234, 1567
