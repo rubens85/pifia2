@@ -35,7 +35,9 @@ class Pifia2
    	 	#Recorre la cadena 1
    	    for j in 0..numero2.length
            if numero1[i] == numero2[j]
-              numeroPicas=numeroPicas+1
+           	if i!=j
+           		numeroPicas=numeroPicas+1
+           	end 
            end
    	    end
      return numeroPicas
@@ -50,13 +52,13 @@ class Pifia2
    	 #Recorre la cadena 2 y 1
    	 for i in 0..numero1.length
    	 	#Compara las cadenas
-        if numero1[i] == numero2[1]
+        if numero1[i] == numero2[i]
            numeroFijas=numeroFijas+1
         end
      return numeroFijas
    	 end
     end
-
-
 end
 
+pifia2 = Pifia2.new
+pust pifia2.validarFijas 1234, 1567
